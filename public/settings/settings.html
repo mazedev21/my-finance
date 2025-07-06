@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Finance | Settings</title>
+    <link rel="stylesheet" href="../../src/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="sideNav">
+            <nav>
+                <ul>
+                    <li><a class="menu" href="../homepage/home.html">
+                        <i class="fa-solid fa-house fa-2x"></i>
+                        <br>Home
+                        </a>
+                    </li>
+                    <li><a class="menu menu-active" href="#" onclick="showContent('user-information')">
+                        <i class="fa-solid fa-user fa-2x"></i>
+                        <br>User Information
+                        </a>
+                    </li>
+                    <li><a class="menu" href="#" onclick="showContent('settings')">
+                        <i class="fa-solid fa-gear fa-2x"></i>
+                        <br>Settings
+                        </a>
+                    </li>
+                    <li><a class="menu" href="#" onclick="showContent('security')">
+                        <i class="fa-solid fa-shield fa-2x"></i>
+                        <br>Security
+                        </a>
+                    </li>
+                    <li><a class="menu" href="#" onclick="logout()">
+                        <i class="fa-solid fa-right-from-bracket fa-2x"></i>
+                        <br>Log Out
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+
+        </div>
+        <div class="content">
+            <!-- Content Account Information -->
+             <div class="account-information" id="user-information">
+                <div class="title">
+                    <h2>Account Information</h2>
+                 </div>
+                 <div class="content-account">
+                    <div class="setting-account">
+                        <div class="info">
+                            <div class="label">
+                                <label for="">Name</label>
+                            </div>
+                            <div class="data">
+                                <div class="data-card">
+                                    <span>Data</span>
+                                </div>
+                            </div>
+                            <button class="edit-button"><i class="fa-solid fa-pen"> Edit</i></button>
+                        </div>
+                        <div class="info">
+                            <div class="label">
+                                <label for="">Username</label>
+                            </div>
+                            <div class="data">
+                                <div class="data-card">
+                                    <span>Data</span>
+                                </div>
+                            </div>
+                            <button class="edit-button"><i class="fa-solid fa-pen"> Edit</i></button>
+                        </div>
+                        <div class="info">
+                            <div class="label">
+                                <label for="">Email</label>
+                            </div>
+                            <div class="data">
+                                <div class="data-card">
+                                    <span>Data</span>
+                                </div>
+                            </div>
+                            <button class="edit-button"><i class="fa-solid fa-pen"> Edit</i></button>
+                        </div>
+                        <div class="info">
+                            <div class="label">
+                                <label for="">Phone</label>
+                            </div>
+                            <div class="data">
+                                <div class="data-card">
+                                    <span>Data</span>
+                                </div>
+                            </div>
+                            <button class="edit-button"><i class="fa-solid fa-pen"> Edit</i></button>
+                        </div>
+                    </div>
+                    <div class="userprofile">
+                        <div class="image-profile">
+                            <img src="../../src/img/noprofile.png" alt="No Profile Picture">
+                        </div>
+                        <div class="edit-image">
+                            <button class="edit-button"><i class="fa-solid fa-pen"> Edit</i></button>
+                        </div>
+                    </div>
+                 </div>
+             </div>
+             
+             <!-- Content Settings -->
+              <div class="settings" id="settings">
+                <div class="title">
+                    <h2>Settings</h2>
+                </div>
+                <div class="content-settings">
+                    <div class="info">
+                        <div class="label">
+                            <label for="">Language</label>
+                        </div>
+                        <div class="data">
+                            <div class="data-card">
+                                <span>Data</span>
+                            </div>
+                        </div>
+                        <button class="edit-button"><i class="fa-solid fa-pen"> Edit</i></button>
+                    </div>
+                    <div class="info">
+                        <div class="label">
+                            <label for="">Date Type</label>
+                        </div>
+                        <div class="data">
+                            <div class="data-card">
+                                <span>Data</span>
+                            </div>
+                        </div>
+                        <button class="edit-button"><i class="fa-solid fa-pen"> Edit</i></button>
+                    </div>
+                    <div class="info">
+                        <div class="label">
+                            <label for="">Currency</label>
+                        </div>
+                        <div class="data">
+                            <div class="data-card">
+                                <span>Data</span>
+                            </div>
+                        </div>
+                        <button class="edit-button"><i class="fa-solid fa-pen"> Edit</i></button>
+                    </div>
+                    <div class="info">
+                        <div class="label">
+                            <label for="">Display Profile Picture</label>
+                        </div>
+                        <div class="data">
+                            <div class="radio-button">
+                                <input type="radio" name="yes" value="yes">
+                                <label for="yes">Yes</label>
+                                <input type="radio" name="no" value="no">
+                                <label for="no">No</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+              </div>
+
+              <!-- Security -->
+               <div class="security" id="security">
+                <div class="title">
+                    <h2>Security</h2>
+                </div>
+                <div class="content-security">
+                    <div class="info">
+                        <div class="label">
+                            <label for="">Password</label>
+                        </div>
+                        <div class="data">
+                            <div class="data-card">
+                                <span>Data</span>
+                            </div>
+                            <button class="edit-button">Change Password</button>
+                        </div>
+                        <button class="edit-button"><i class="fa-solid fa-pen"> Edit</i></button>
+                    </div>
+                </div>
+               </div>
+            
+            <!-- Footer -->
+            <div class="footer">
+                <div class="developer">
+                    <span>Created and Developed by <b>Mazedev Indonesia</b></span>
+                </div>
+                <div class="appVersion">
+                    <div class="version">
+                        <span>0.0.0.25 Beta Version</span>
+                    </div>
+                    <div class="last-update">
+                        <span>Last Update 15-06-2025</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="../../src/Js/script.js"></script>
+    <script>
+        // Content switcher
+        document.addEventListener('DOMContentLoaded', function () {
+        function showContent(contentId) {
+            const contents = document.querySelectorAll('.account-information, .settings, .security');
+            contents.forEach(content => content.style.display = 'none');
+
+            const target = document.getElementById(contentId);
+            if (target) {
+            target.style.display = 'block';
+            }
+
+            const menuLinks = document.querySelectorAll('.sideNav .menu');
+            menuLinks.forEach(link => link.classList.remove('menu-active'));
+
+            const clickedLink = [...menuLinks].find(link =>
+            link.getAttribute('onclick')?.includes(contentId)
+            );
+            if (clickedLink) {
+            clickedLink.classList.add('menu-active');
+            }
+
+            localStorage.setItem('activeSettingsSection', contentId);
+        }
+
+        // Ambil dari localStorage atau fallback ke default
+        const savedSection = localStorage.getItem('activeSettingsSection') || 'account-information';
+
+        // Cek apakah elemen target ada, baru tampilkan
+        if (document.getElementById(savedSection)) {
+            showContent(savedSection);
+        } else {
+            showContent('user-information'); // fallback final
+        }
+
+        // Global exposure
+        window.showContent = showContent;
+        });
+
+
+        function logout() {
+        // Hapus localStorage yang digunakan untuk menu aktif
+        localStorage.removeItem('activeSettingsSection');
+
+        // Redirect ke halaman login (atau homepage), misalnya:
+        window.location.href = "../index.html"; // Ganti sesuai URL login kamu
+        }
+    </script>
+</body>
+</html>

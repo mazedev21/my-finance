@@ -1,0 +1,779 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Finance | Dashboard</title>
+    <link rel="stylesheet" href="../../src/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+    <section class="dashboard-header">
+        <div class="dashboard-topbar">
+            <div class="user-greetings">
+                <img src="../../src/img/noprofile.png" alt="User Icon" class="icon">
+                <span>Welcome back <strong>Emannuel Henji</strong>!</span>
+            </div>
+            <div class="menu-wrapper" style="position: relative;">
+                <div class="menu-icon" id="menuToggle">
+                    <i class="fa-solid fa-bars icon" style="color: #fafafa;"></i>
+                </div>
+                <nav class="nav-menu" id="navMenu">
+                    <ul>
+                        <li class="menu menu-active"><a href="#">Home</a></li>
+                        <li class="menu"><a href="#financial-detail">Financial Details</a></li>
+                        <li class="menu"><a href="#monthly-report">Monthly Report</a></li>
+                        <li class="menu"><a href="#your-plans">Your Plans</a></li>
+                        <li class="menu"><a href="#financial-prediction">Financial Prediction</a></li>
+                        <li class="menu"><a href="../settings/settings.html">Settings</a></li>
+                        <li class="btn-logout"><a href="#">Log Out</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+        <div class="balance-card">
+            <p class="label">Your Balance</p>
+            <h1 class="balance">999.999.999</h1>
+            <button class="manage-button" onclick="openPopUp()">Manage ▼</button>
+        </div>
+        <div class="note">
+            <p class="note-text">Same as last month!</p>
+        </div>
+
+        <!-- Pop Up Menu -->
+         <div class="pop-up-card" id="pop-up" style="display: none;">
+            <button class="close-btn" onclick="closePopUp()">x</button>
+            <div class="pop-up-content">
+                <h2>Manage Money</h2>
+                <div class="pop-up-content-switcher">
+                    <button class="sbuttons sbuttons-active" id="btnIncome">Income</button>
+                    <button class="sbuttons" id="btnOutcome">Outcome</button>
+                </div>
+                <div class="pop-up-content-main">
+                    <!-- Pop Up Income -->
+                    <div class="form-container income-form" id="formIncome">
+                     <form action="">
+                        <input class="single-input" type="text" placeholder="Income From">
+                        <select class="single-input" name="income-category" id="income-category">
+                            <option value="" disabled selected>Income Category</option>
+                            <option value="needs">Salary</option>
+                            <option value="wants">Debt</option>
+                            <option value="others">Lenient Payment</option>
+                            <option value="others">Others</option>
+                        </select>
+
+                        <div class="input-row">
+                            <label for="income-value">Rp</label>
+                            <input name="income-value" type="number" placeholder="Income Value">
+                        </div>
+
+                        <div class="input-row">
+                            <label for="datetime">Date</label>
+                            <input name="datetime" type="datetime-local" placeholder="Date & Time">
+                        </div>
+                        
+                        <button type="button">Submit</button>
+                     </form>
+                    </div>
+
+                    <!-- Pop Up Outcome -->
+                    <div class="form-container outcome-form" style="display: none;" id="formOutcome">
+                        <form action="">
+                            <input class="single-input" type="text" placeholder="Outcome for">
+                            <select class="single-input" name="outcome-category" id="outcome-category">
+                                <option value="" disabled selected>Outcome Category</option>
+                                <option value="needs">Needs</option>
+                                <option value="wants">Wants</option>
+                                <option value="others">Debt Payment</option>
+                                <option value="others">Lent</option>
+                                <option value="others">Others</option>
+                            </select>
+    
+                            <div class="input-row">
+                                <label for="income-value">Rp</label>
+                                <input name="income-value" type="number" placeholder="Income Value">
+                            </div>
+    
+                            <div class="input-row">
+                                <label for="datetime">Date</label>
+                                <input name="datetime" type="datetime-local" placeholder="Date & Time">
+                            </div>
+                            
+                            <button type="button">Submit</button>
+                         </form>
+                    </div>
+                </div>
+            </div>
+         </div>
+
+
+    </section>
+
+    <section class="financial-detail" id="financial-detail">
+        <h2>Financial Detail</h2>
+        <div class="detail-cards">
+            <div class="detail-card">
+                <p class="detail-title">Bank</p>
+                <div class="donut">
+                    <svg width="160" height="160">
+                    <circle class="track" cx="80" cy="80" r="60"></circle>
+                    <circle class="fill" cx="80" cy="80" r="60" style="--percent: 65;"></circle>
+                    <text x="50%" y="50%" text-anchor="middle" dy=".3em" class="donut-text">65%</text>
+                    </svg>
+                </div>
+                <p class="amount">Rp 1.000.000</p>
+            </div>
+                
+      
+            <div class="detail-card">
+                <p class="detail-title">Cash</p>
+                <div class="donut">
+                    <svg width="160" height="160">
+                    <circle class="track" cx="80" cy="80" r="60"></circle>
+                    <circle class="fill" cx="80" cy="80" r="60" style="--percent: 20;"></circle>
+                    <text x="50%" y="50%" text-anchor="middle" dy=".3em" class="donut-text">20%</text>
+                    </svg>
+                </div>
+                <p class="amount">Rp 200.000</p>
+            </div>
+      
+            <div class="detail-card">
+                <p class="detail-title">Lent</p>
+                <div class="donut">
+                    <svg width="160" height="160">
+                    <circle class="track" cx="80" cy="80" r="60"></circle>
+                    <circle class="fill" cx="80" cy="80" r="60" style="--percent: 0;"></circle>
+                    <text x="50%" y="50%" text-anchor="middle" dy=".3em" class="donut-text">0%</text>
+                    </svg>
+                </div>
+                <p class="amount">Rp 0</p>
+            </div>
+      
+            <div class="detail-card">
+                <p class="detail-title">Debt</p>
+                <div class="donut">
+                    <svg width="160" height="160">
+                    <circle class="track" cx="80" cy="80" r="60"></circle>
+                    <circle class="fill" cx="80" cy="80" r="60" style="--percent: 0;"></circle>
+                    <text x="50%" y="50%" text-anchor="middle" dy=".3em" class="donut-text">0%</text>
+                    </svg>
+                </div>
+                <p class="amount">Rp 0</p>
+            </div>
+        </div>
+        <div class="balance-information">
+            <div class="total-balance">
+                <p>Total Balance : Rp 1.200.000</p>
+            </div>
+            <div class="net-balance">
+                <p>Net Balance : Rp 1.200.000</p>
+            </div>
+        </div>
+    </section>
+    
+    <section class="monthly-report" id="monthly-report">
+        <h2>Monthly Report</h2>
+        <div class="report">
+            <div class="report-details">
+                <label> View :
+                    <select name="report-type" id="report-type">
+                        <option value="Expenditures">Expenditures</option>
+                        <option value="Income">Income</option>
+                    </select>
+                </label>
+            </div>
+            <div class="report-details">
+                <p>Avg. Spend: Rp 50.000.000</p>
+            </div>
+            <div class="report-details">
+                <p>Min. Spend: Rp 20.000.000</p>
+            </div>
+            <div class="report-details">
+                <p>Max. Spend: Rp 100.000.000</p>
+            </div>
+            <div class="report-details">
+                <p>Total Spend:Rp 1.000.000.000</p>
+            </div>
+        </div>
+        <div class="graphics">
+            <canvas id="myBarChart" width="700" height="400"></canvas>
+            
+        </div>
+    </section>
+    <section class="your-plans" id="your-plans">
+        <h2>Your Plans</h2>
+        <div class="detail-cards">
+            <div class="detail-card">
+                <p class="detail-title">Needs <i class="fa-solid fa-thumbs-up"></i></p>
+                <div class="donut">
+                    <svg width="160" height="160">
+                    <circle class="track" cx="80" cy="80" r="60"></circle>
+                    <circle class="fill" cx="80" cy="80" r="60" style="--percent: 20;"></circle>
+                    <text x="50%" y="50%" text-anchor="middle" dy=".3em" class="donut-text">20%</text>
+                    </svg>
+                </div>
+                <p class="amount">Rp 200.000</p>
+            </div>
+                
+      
+            <div class="detail-card">
+                <p class="detail-title">Wants <i class="fa-solid fa-thumbs-down"></i></p>
+                <div class="donut">
+                    <svg width="160" height="160">
+                    <circle class="track" cx="80" cy="80" r="60"></circle>
+                    <circle class="fill" cx="80" cy="80" r="60" style="--percent: 5;"></circle>
+                    <text x="50%" y="50%" text-anchor="middle" dy=".3em" class="donut-text">5%</text>
+                    </svg>
+                </div>
+                <p class="amount">Rp 50.000</p>
+            </div>
+      
+            <div class="detail-card">
+                <p class="detail-title">Save <i class="fa-solid fa-ban"></i></p>
+                <div class="donut">
+                    <svg width="160" height="160">
+                    <circle class="track" cx="80" cy="80" r="60"></circle>
+                    <circle class="fill" cx="80" cy="80" r="60" style="--percent: 80;"></circle>
+                    <text x="50%" y="50%" text-anchor="middle" dy=".3em" class="donut-text">80%</text>
+                    </svg>
+                </div>
+                <p class="amount">Rp 900.000</p>
+            </div>
+      
+            <div class="detail-card">
+                <p class="detail-title">Others <i class="fa-solid fa-ban"></i></p>
+                <div class="donut" style="stroke: silver;">
+                    <svg width="160" height="160">
+                    <circle class="track" cx="80" cy="80" r="60"></circle>
+                    <circle class="fill" cx="80" cy="80" r="60" style="--percent: 0;"></circle>
+                    <text x="50%" y="50%" text-anchor="middle" dy=".3em" class="donut-text">0%</text>
+                    </svg>
+                </div>
+                <p class="amount">Rp 0</p>
+            </div>
+        </div>
+        <div class="balance-information">
+            <div class="total-balance">
+                <p>My Balance : Rp 1.200.000</p>
+            </div>
+            <div class="net-balance">
+                <p>Balance Used : Rp 1.200.000</p>
+            </div>
+        </div>
+        <h2 style="text-align: left;">Planning Details</h2>
+        <div class="toggle">
+            <div class="toggle-button">
+                <button class="tbutton tbutton-active" onclick="showSection('needs')">Needs</button>
+                <button class="tbutton" onclick="showSection('wants')">Wants</button>
+                <button class="tbutton" onclick="showSection('others')">Others</button>
+                <button class="tbutton" onclick="showSection('income')">Income</button>
+            </div>
+            <!-- Budget details -->
+            <div class="budget-details" id="budget-needs">
+                <span>Needs Budget : Rp 200.000</span>
+            </div>
+            <div class="budget-details" id="budget-wants" style="display: none;">
+                <span>Wants Budget : Rp 150.000</span>
+            </div>
+            <div class="budget-details" id="budget-others" style="display: none;">
+                <span>Others Budget : Rp 100.000</span>
+            </div>
+            <div class="budget-details" id="budget-income" style="display: none;"></div>
+        </div>
+        <div class="information-table">
+            <!-- Needs table -->
+            <table class="detail-table" id="table-needs">
+                <thead>
+                    <tr>
+                        <th style="width: 5%;">No</th>
+                        <th style="width: 30%;">Needs</th>
+                        <th style="width: 25%;">Date</th>
+                        <th style="width: 30%;">Cost</th>
+                        <th style="width: 10%;"></th>
+                    </tr>
+                </thead>
+                <tbody class="scrollable-tbody">
+                    <tr>
+                        <td style="width: 5%;">1</td>
+                        <td style="width: 30%;">Internet Bill</td>
+                        <td style="width: 25%;">31 January 2025</td>
+                        <td style="width: 30%;">Rp 100.000</td>
+                        <td style="width: 10%;">
+                            <button class="delete-button" title="Delete">
+                                <i class="fa-solid fa-trash" style="color: #da0b0b;"></i>
+                            </button>
+                        </td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr class="add-more-row">
+                        <td>
+                            <button class="add-more-button" title="Add More" onclick="openPopUpNeeds()">
+                                <i class="fa-solid fa-plus"></i> Add More
+                            </button>
+                        </td>
+                        <td class="total-cost">Rp 100.000</td>
+                    </tr>
+                </tfoot>
+            </table>
+
+            <!-- Wants table -->
+            <table class="detail-table" id="table-wants" style="display: none;">
+                <thead>
+                    <tr>
+                        <th style="width: 5%;">No</th>
+                        <th style="width: 30%;">Wants</th>
+                        <th style="width: 25%;">Date</th>
+                        <th style="width: 30%;">Cost</th>
+                        <th style="width: 10%;"></th>
+                    </tr>
+                </thead>
+                <tbody class="scrollable-tbody">
+                    <tr>
+                        <td style="width: 5%;">1</td>
+                        <td style="width: 30%;">Netflix</td>
+                        <td style="width: 25%;">31 January 2025</td>
+                        <td style="width: 30%;">Rp 30.000</td>
+                        <td style="width: 10%;">
+                            <button class="delete-button" title="Delete">
+                                <i class="fa-solid fa-trash" style="color: #da0b0b;"></i>
+                            </button>
+                        </td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr class="add-more-row">
+                        <td>
+                            <button class="add-more-button" title="Add More" onclick="openPopUpWants()">
+                                <i class="fa-solid fa-plus"></i> Add More
+                            </button>
+                        </td>
+                        <td class="total-cost">Rp 30.000</td>
+                    </tr>
+                </tfoot>
+            </table>
+
+            <!-- Others table -->
+            <table class="detail-table" id="table-others" style="display: none;">
+                <thead>
+                    <tr>
+                        <th style="width: 5%;">No</th>
+                        <th style="width: 30%;">Items</th>
+                        <th style="width: 25%;">Date</th>
+                        <th style="width: 30%;">Cost</th>
+                        <th style="width: 10%;"></th>
+                    </tr>
+                </thead>
+                <tbody class="scrollable-tbody">
+                    <tr>
+                        <td style="width: 5%;">1</td>
+                        <td style="width: 30%;">Donation</td>
+                        <td style="width: 25%;">31 January 2025</td>
+                        <td style="width: 30%;">Rp 40.000</td>
+                        <td style="width: 10%;">
+                            <button class="delete-button" title="Delete">
+                                <i class="fa-solid fa-trash" style="color: #da0b0b;"></i>
+                            </button>
+                        </td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr class="add-more-row">
+                        <td>
+                            <button class="add-more-button" title="Add More" onclick="openPopUpOthers()">
+                                <i class="fa-solid fa-plus"></i> Add More
+                            </button>
+                        </td>
+                        <td class="total-cost">Rp 40.000</td>
+                    </tr>
+                </tfoot>
+            </table>
+
+            <!-- Income table -->
+            <table class="detail-table" id="table-income" style="display: none;">
+                <thead>
+                    <tr>
+                        <th style="width: 5%;">No</th>
+                        <th style="width: 30%;">Income</th>
+                        <th style="width: 25%;">Date</th>
+                        <th style="width: 30%;">Value</th>
+                        <th style="width: 10%;"></th>
+                    </tr>
+                </thead>
+                <tbody class="scrollable-tbody">
+                    <tr>
+                        <td style="width: 5%;">1</td>
+                        <td style="width: 30%;">Salary</td>
+                        <td style="width: 25%;">1 January 2025</td>
+                        <td style="width: 30%;">Rp 1.000.000</td>
+                        <td style="width: 10%;">
+                            <button class="delete-button" title="Delete">
+                                <i class="fa-solid fa-trash" style="color: #da0b0b;"></i>
+                            </button>
+                        </td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr class="add-more-row">
+                        <td>
+                            <button class="add-more-button" title="Add More" onclick="openPopUpIncome()">
+                                <i class="fa-solid fa-plus"></i> Add More
+                            </button>
+                        </td>
+                        <td class="total-cost">Rp 1.000.000</td>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+
+        <!-- Pop Up Add More Needs-->
+        <div class="pop-up-card" id="formAddMoreNeeds" style="display: none;">
+            <button class="close-btn" onclick="closePopUpNeeds()">x</button>
+            <div class="pop-up-content">
+                <h2>Add Needs Plan</h2>
+                <div class="pop-up-content-main">
+                    <!-- Pop Up Income -->
+                    <div class="form-container needsplan-form" id="formAddMore">
+                     <form action="">
+                        <input class="single-input" type="text" placeholder="Outcome For">
+                        <select class="single-input" name="outcome-category" id="outcome-category">
+                            <option value="" disabled selected>Outcome Category</option>
+                            <option value="debt-payment">Debt Payment</option>
+                            <option value="lent-payment">Lent Payment</option>
+                            <option value="others">Others</option>
+                        </select>
+
+                        <div class="input-row">
+                            <label for="outcome-value">Rp</label>
+                            <input name="outcome-value" type="number" placeholder="Income Value">
+                        </div>
+
+                        <div class="input-row">
+                            <label for="date">Date</label>
+                            <input name="date" type="datetime-local" placeholder="Date">
+                        </div>
+
+                        <select class="single-input" name="repeat-category" id="repeat-category">
+                            <option value="" disabled selected>Repeat Plan</option>
+                            <option value="no-repeat">No Repeat</option>
+                            <option value="every-week">Every Week</option>
+                            <option value="every-month">Every Month</option>
+                            <option value="every-year">Every Year</option>
+                        </select>
+                        
+                        <button type="button">Submit</button>
+                     </form>
+                    </div>
+                </div>
+            </div>
+         </div>
+         
+         <!-- Pop Up Add More Wants-->
+        <div class="pop-up-card" id="formAddMoreWants" style="display: none;">
+            <button class="close-btn" onclick="closePopUpWants()">x</button>
+            <div class="pop-up-content">
+                <h2>Add Wants Plan</h2>
+                <div class="pop-up-content-main">
+                    <!-- Pop Up Income -->
+                    <div class="form-container wantsplan-form" id="formAddMore">
+                     <form action="">
+                        <input class="single-input" type="text" placeholder="Outcome For">
+                        <select class="single-input" name="outcome-category" id="outcome-category">
+                            <option value="" disabled selected>Outcome Category</option>
+                            <option value="debt-payment">Debt Payment</option>
+                            <option value="lent-payment">Lent Payment</option>
+                            <option value="others">Others</option>
+                        </select>
+
+                        <div class="input-row">
+                            <label for="income-value">Rp</label>
+                            <input name="income-value" type="number" placeholder="Income Value">
+                        </div>
+
+                        <div class="input-row">
+                            <label for="date">Date</label>
+                            <input name="date" type="datetime-local" placeholder="Date">
+                        </div>
+
+                        <select class="single-input" name="repeat-category" id="repeat-category">
+                            <option value="" disabled selected>Repeat Plan</option>
+                            <option value="no-repeat">No Repeat</option>
+                            <option value="every-week">Every Week</option>
+                            <option value="every-month">Every Month</option>
+                            <option value="every-year">Every Year</option>
+                        </select>
+                        
+                        <button type="button">Submit</button>
+                     </form>
+                    </div>
+                </div>
+            </div>
+         </div>
+
+        <!-- Pop Up Add More Others-->
+        <div class="pop-up-card" id="formAddMoreOthers" style="display: none;">
+            <button class="close-btn" onclick="closePopUpOthers()">x</button>
+            <div class="pop-up-content">
+                <h2>Add Others Plan</h2>
+                <div class="pop-up-content-main">
+                    <!-- Pop Up Income -->
+                    <div class="form-container othersplan-form" id="formAddMore">
+                     <form action="">
+                        <input class="single-input" type="text" placeholder="Outcome For">
+                        <select class="single-input" name="outcome-category" id="outcome-category">
+                            <option value="" disabled selected>Outcome Category</option>
+                            <option value="debt-payment">Debt Payment</option>
+                            <option value="lent-payment">Lent Payment</option>
+                            <option value="others">Others</option>
+                        </select>
+
+                        <div class="input-row">
+                            <label for="income-value">Rp</label>
+                            <input name="income-value" type="number" placeholder="Income Value">
+                        </div>
+
+                        <div class="input-row">
+                            <label for="date">Date</label>
+                            <input name="date" type="datetime-local" placeholder="Date">
+                        </div>
+
+                        <select class="single-input" name="repeat-category" id="repeat-category">
+                            <option value="" disabled selected>Repeat Plan</option>
+                            <option value="no-repeat">No Repeat</option>
+                            <option value="every-week">Every Week</option>
+                            <option value="every-month">Every Month</option>
+                            <option value="every-year">Every Year</option>
+                        </select>
+                        
+                        <button type="button">Submit</button>
+                     </form>
+                    </div>
+                </div>
+            </div>
+         </div>
+
+         <!-- Pop Up Add More Income-->
+        <div class="pop-up-card" id="formAddMoreIncome" style="display: none;">
+            <button class="close-btn" onclick="closePopUpIncome()">x</button>
+            <div class="pop-up-content">
+                <h2>Add Income Plan</h2>
+                <div class="pop-up-content-main">
+                    <!-- Pop Up Income -->
+                    <div class="form-container incomeplan-form" id="formAddMore">
+                     <form action="">
+                        <input class="single-input" type="text" placeholder="Outcome For">
+                        <select class="single-input" name="income-category" id="income-category">
+                            <option value="" disabled selected>Income Category</option>
+                            <option value="salary">Salary</option>
+                            <option value="debt">Debt Payment</option>
+                            <option value="lenient-payment">Lenient Payment</option>
+                            <option value="Others">Others</option>
+                        </select>
+
+                        <div class="input-row">
+                            <label for="income-value">Rp</label>
+                            <input name="income-value" type="number" placeholder="Income Value">
+                        </div>
+
+                        <div class="input-row">
+                            <label for="date">Date</label>
+                            <input name="date" type="datetime-local" placeholder="Date">
+                        </div>
+
+                        <select class="single-input" name="repeat-category" id="repeat-category">
+                            <option value="" disabled selected>Repeat Plan</option>
+                            <option value="no-repeat">No Repeat</option>
+                            <option value="every-week">Every Week</option>
+                            <option value="every-month">Every Month</option>
+                            <option value="every-year">Every Year</option>
+                        </select>
+                        
+                        <button type="button">Submit</button>
+                     </form>
+                    </div>
+                </div>
+            </div>
+         </div>
+    </section>
+    <section class="financial-prediction" id="financial-prediction">
+        <h2>Financial Prediction</h2>
+        <div class="financial-prediction-details">
+            <div class="column">
+                <div class="prediction-card income">
+                    <span class="span-income">Income</span>
+                </div>
+                <table class="data-table income-table">
+                    <tr>
+                        <td>Salary</td>
+                        <td class="nominal">+ Rp 1.000.000</td>
+                    </tr>
+                    <tr>
+                        <td>Others</td>
+                        <td class="nominal">+ Rp 500.000</td>
+                    </tr>
+                    <tr>
+                        <th colspan="2" style="text-align: center;">+ Rp 1.500.000</th>
+                    </tr>
+                </table>
+            </div>
+            <div class="column">
+                <div class="prediction-card expenses">
+                    <span class="span-expenses">Expenses</span>
+                </div>
+                <table class="data-table expenses-table">
+                    <tr>
+                        <td>Internet Bill</td>
+                        <td class="nominal">- Rp 200.000</td>
+                    </tr>
+                    <tr>
+                        <td>Netflix</td>
+                        <td class="nominal">- Rp 25.000</td>
+                    </tr>
+                    <tr>
+                        <th colspan="2" style="text-align: center;">- Rp 225.000</th>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <div class="calculacy-prediction">
+            <span>+ 1.275.000 on Next Month</span>
+        </div>
+    </section>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="../../src/Js/script.js"></script>
+    <script>
+        // Navbar script
+        document.addEventListener("DOMContentLoaded", function () {
+        const navMenu = document.getElementById("navMenu");
+        const menuToggle = document.getElementById("menuToggle");
+
+        // Toggle menu on icon click
+        menuToggle.addEventListener("click", function (event) {
+            event.stopPropagation(); // prevent event from bubbling to document
+            navMenu.classList.toggle("show");
+        });
+
+        // Hide menu if click outside
+        document.addEventListener("click", function (event) {
+            if (
+            navMenu.classList.contains("show") &&
+            !navMenu.contains(event.target) &&
+            !menuToggle.contains(event.target)
+            ) {
+            navMenu.classList.remove("show");
+            }
+        });
+        });
+
+        // active menu script
+        // Tunggu sampai DOM siap
+        document.addEventListener("DOMContentLoaded", function () {
+            // Ambil semua elemen <li> dengan class 'menu'
+            const menuItems = document.querySelectorAll(".nav-menu .menu");
+
+            menuItems.forEach(function (item) {
+            item.addEventListener("click", function () {
+                // Hapus class 'menu-active' dari semua menu
+                menuItems.forEach(i => i.classList.remove("menu-active"));
+
+                // Tambahkan ke item yang diklik
+                this.classList.add("menu-active");
+            });
+            });
+        });
+
+        // Graphics bar script
+        document.addEventListener('DOMContentLoaded', () => {
+        const ctx = document.getElementById('myBarChart').getContext('2d');
+        const myBarChart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+            labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
+            datasets: [
+            {
+                label: 'Total Expenses',
+                data: [120000, 190000, 30000, 50000, 80000, 150000, 100000, 70000, 60000, 110000, 90000, 130000],
+                backgroundColor: 'white',
+                borderColor: 'white',
+                borderWidth: 1
+            },
+            {
+                label: 'Total Income',
+                data: [200000, 210000, 180000, 220000, 250000, 240000, 260000, 230000, 200000, 210000, 190000, 220000],
+                backgroundColor: 'rgba(0, 255, 0, 0.6)', // Hijau transparan
+                borderColor: 'white',
+                borderWidth: 1
+            }
+            ]
+            },
+            options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+                legend: {
+                labels: {
+                    color: 'white' // warna label legenda
+                }
+                }
+            },
+            scales: {
+                x: {
+                ticks: {
+                    color: 'white' // warna teks label sumbu X
+                },
+                grid: {
+                    color: 'rgba(255,255,255,0.2)' // warna garis X grid
+                }
+                },
+                y: {
+                beginAtZero: true,
+                ticks: {
+                    color: 'white' // warna teks label sumbu Y
+                },
+                grid: {
+                    color: 'rgba(255,255,255,0.2)' // warna garis Y grid
+                }
+                }
+            }
+            }
+        });
+        });
+
+        // Pop up content switcher
+        // Ambil referensi elemen
+        const btnIncome = document.getElementById('btnIncome');
+        const btnOutcome = document.getElementById('btnOutcome');
+        const formIncome = document.getElementById('formIncome');
+        const formOutcome = document.getElementById('formOutcome');
+
+        // Saat tombol Form 1 diklik
+        btnIncome.addEventListener('click', function() {
+        formIncome.style.display = 'block';  // Tampilkan form 1
+        formOutcome.style.display = 'none';   // Sembunyikan form 2
+
+        // Ubah tombol aktif
+        btnIncome.classList.add('sbuttons-active');
+        btnOutcome.classList.remove('sbuttons-active');
+        });
+
+        // Saat tombol Form 2 diklik
+        btnOutcome.addEventListener('click', function() {
+        formIncome.style.display = 'none';   // Sembunyikan form 1
+        formOutcome.style.display = 'block';  // Tampilkan form 2
+
+        // Ubah tombol aktif
+        btnIncome.classList.remove('sbuttons-active');
+        btnOutcome.classList.add('sbuttons-active');
+        });
+    </script>
+</body>
+<footer>
+    <span>Created and Developed by <b>Mazedev Indonesia</b></span>
+    <span>Version 0.0.0.25 betaVersion</span>
+</footer>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Finance App</title>
+    <link rel="stylesheet" href="../src/css/login.css">
+</head>
+<body>
+    <div class="container" id="container">
+        <!-- Sign Up Form -->
+        <div class="form-container sign-up-container">
+          <form>
+            <h2>Sign Up</h2>
+            <input type="text" placeholder="Your Name" />
+            <input type="email" placeholder="Email" />
+            <input type="text" placeholder="Username" />
+            <input type="password" placeholder="Password" />
+            <input type="password" placeholder="Repeat Password" />
+            <button type="button" onclick="window.location.href='homepage/home.html'">Submit</button>
+          </form>
+        </div>
+    
+        <!-- Log In Form -->
+        <div class="form-container sign-in-container">
+          <form>
+            <h2>Log In</h2>
+            <input type="text" placeholder="Username" />
+            <input type="password" placeholder="Password" />
+            <button type="button" onclick="window.location.href='homepage/home.html'">Submit</button>
+          </form>
+        </div>
+    
+        <!-- Overlay -->
+        <div class="overlay-container">
+          <div class="overlay">
+            <div class="overlay-panel overlay-left">
+              <h1>My Finance</h1>
+              <p>Already have an account?</p>
+              <button type="ghost" id="switchToLogin">Login</button>
+            </div>
+            <div class="overlay-panel overlay-right">
+              <h1>My Finance</h1>
+              <p>Don't have an account?</p>
+              <button class="ghost" id="switchToSignUp">Sign Up</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    
+
+
+    <script src="../src/Js/script.js"></script>
+</body>
+</html>
