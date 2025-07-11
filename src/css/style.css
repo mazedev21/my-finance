@@ -43,7 +43,7 @@ body {
   .user-greetings {
     display: flex;
     align-items: center;
-    font-size: 16px;
+    font-size: 1rem;
   }
   
   .user-greetings .icon {
@@ -140,12 +140,12 @@ body {
   }
   
   .balance-card .label {
-    font-size: 14px;
+    font-size: 0.9rem;
     margin-bottom: 10px;
   }
   
   .balance-card .balance {
-    font-size: 32px;
+    font-size: 2.5rem;
     font-weight: bold;
     margin: 0;
   }
@@ -154,7 +154,7 @@ body {
     background: none;
     border: none;
     color: #0fbd4f;
-    font-size: 14px;
+    font-size: 0.9rem;
     margin: 10px 0;
     cursor: pointer;
   }
@@ -168,7 +168,7 @@ body {
 
   .note-text {
     color: #fff;
-    font-size: 14px;
+    font-size: 0.9rem;
     font-weight: bold;
   }
 
@@ -790,4 +790,43 @@ footer {
 
 .content-security .data {
   text-align: center;
+}
+
+/* Media Querry */
+/* Small devices (landscape phones, 576px and less) */
+@media (max-width: 576px) {
+
+  .balance-card {
+    max-height: 150px;
+  }
+
+  .user-greetings {
+    font-size: 0.6rem;
+  }
+
+  .balance-card .label {
+    font-size: 0.7rem;
+  }
+
+  .balance-card .balance {
+    font-size: 1.7rem;
+  }
+  
+  .manage-button {
+    font-size: 0.7rem;
+  }
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (max-width: 768px) { 
+  body h2, body p {
+    font-size: 60%;
+  }
+}
+
+/*Large devices (desktops, 992px and up) */
+@media (max-width: 992px) { 
+  body h2, body p {
+    font-size: 65%;
+  }
 }
