@@ -815,18 +815,124 @@ footer {
   .manage-button {
     font-size: 0.7rem;
   }
+
+  .pop-up-content h2 {
+    font-size: 1.3rem;
+  }
+  .pop-up-card {
+    width: 300px;
+  }
+
+  .pop-up-card h2 {
+    color: #009638;
+    margin-bottom: 15px;
+  }
+
+  .form-container form{
+    gap: 0.8rem;
+  }
+
+  .single-input{
+    width: 250px;
+  }
+
+  .input-row{
+    gap: 0.3rem;
+  }
+
+  .input-row label{
+    width: 45px;
+  }
+
+  .input-row input{
+    width: 200px;
+  }
+
+  /*Section Financial Detail*/
+.detail-cards {
+  gap: 40px;
+}
+
+.detail-title {
+  font-weight: bold;
+  color: #0fbd4f;
+  margin-bottom: 5px;
+}
+
+/*Balance Information Section Financial Detail*/
+.balance-information {
+  margin-bottom: 5px;
+}
+
+.balance-information p {
+  font-size: 0.8rem;
+}
+
+/* Monthly Report */
+.report{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 30px;
+  margin-bottom: 20px;
+}
+
+/* Planning details */
+.tbutton {
+  padding: 4px 8px;
+  margin: 2px;
+  width: 70px;
+}
+
+.information-table {
+  margin-top: 8px;
+  max-height: 500px;
+}
+
+.detail-table thead th,
+.detail-table tfoot td,
+.detail-table tbody td {
+  padding: 5px;
+  text-align: center;
+  border-bottom: 1px solid #ddd;
+  font-size: 0.8rem;
+}
+
+.detail-table tfoot td {
+  padding: 5px;
+}
+
+/* Baris Add More */
+
+.add-more-button {
+  font-size: 1rem;
+  padding: 7px;
+}
+
+/* Financial Prediction */
+.financial-prediction-details {
+  gap: 20px;
+}
+
+.data-table {
+  font-size: 0.7rem;
+}
+
+.calculacy-prediction {
+  margin-top: 50px;
+}
+
+footer {
+  font-size: 0.7rem;
+}
 }
 
 /* Medium devices (tablets, 768px and up) */
 @media (max-width: 768px) { 
-  body h2, body p {
-    font-size: 60%;
-  }
 }
 
 /*Large devices (desktops, 992px and up) */
 @media (max-width: 992px) { 
-  body h2, body p {
-    font-size: 65%;
-  }
 }
