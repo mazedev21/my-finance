@@ -46,6 +46,7 @@
 
         </div>
         <div class="content">
+            <div class="hamburger" onclick="toggleNav()">☰ Menu</div>
             <!-- Content Account Information -->
              <div class="account-information" id="user-information">
                 <div class="title">
@@ -250,5 +251,28 @@
         window.location.href = "../index.html"; // Ganti sesuai URL login kamu
         }
     </script>
+<script>
+    const hamburger = document.querySelector('.hamburger');
+    const sideNav = document.querySelector('.sideNav');
+  
+    function toggleNav() {
+      if (sideNav.style.display === 'block') {
+        sideNav.style.display = 'none';
+      } else {
+        sideNav.style.display = 'block';
+      }
+    }
+  
+    // Tutup sideNav jika klik di luar sideNav dan hamburger
+    document.addEventListener('click', function(event) {
+      const isClickInsideNav = sideNav.contains(event.target);
+      const isClickOnHamburger = hamburger.contains(event.target);
+  
+      if (!isClickInsideNav && !isClickOnHamburger && window.innerWidth <= 768) {
+        sideNav.style.display = 'none';
+      }
+    });
+  </script>
+     
 </body>
 </html>
